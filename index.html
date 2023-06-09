@@ -3,16 +3,19 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+</IfModule>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Telemachus / MkON</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">           
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">      
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->        
 
         <link rel="Shortcut Icon" href="favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="css/screen.css"> 
-
+        <link href="css/fonts/font-awesome.min.css" rel="stylesheet">
         <script src="js/preloader.min.js"></script>
         <script type="text/javascript">
 
@@ -39,6 +42,7 @@
         new preLoader(manifest, {
 
           onProgress: function(src, element, index){
+            // output some stats
             var donePercent = Math.floor((100 / this.queue.length) * this.completed.length);
             console.log(donePercent + '% completed');
             var statusText = document.getElementById('statusText');
@@ -52,7 +56,7 @@
                 var statusText = document.getElementById('statusText');
                 statusText.innerHTML = 'ERROR';
             }
-            else { 
+            else { // Continue to load
                 var wrapper = document.getElementById('wrapper'); 
                 wrapper.className = wrapper.className + ' loaded';
                 var status = document.getElementById('status');
@@ -89,11 +93,12 @@
 
                   <ul id="menu" class="clearfix">
                       
-                      <li id="openList" class="link openList"><a class="lightText"><i class="fa-add"></i> &nbsp; ADD MODULES</a></li>
-                      <li id="lockUnlock" data-state="unlocked" class="link lockUnlock"><a class="lightText"><i id="lockUnlockBtnIcon" class="fa-unlock fa-lg"></i></a></li>
-                      <li id="exportModules" class="link exportOverlay"><a class="lightText"><i class="fa-import-export"></i> &nbsp; IMPORT / EXPORT</a></li>
-                      <li id="clearModules" class="link clearOverlay"><a class="lightText"><i class="fa-clear"></i>&nbsp; CLEAR</a></li>                      
-                      <li id="mobileMenu" class="link mobile"><a class="lightText"><i class="fa-menu openMobile"></i><i class="fa-angle-double-up fa-lg closeMobile"></i></a></li>
+                      <li id="openList" class="link openList"><a class="lightText"><i class="fa fa-plus-square"></i> &nbsp; ADD MODULES</a></li>
+                      <li id="lockUnlock" data-state="unlocked" class="link lockUnlock"><a class="lightText"><i id="lockUnlockBtnIcon" class="fa fa-unlock fa-lg"></i></a></li>
+                      <li id="exportModules" class="link exportOverlay"><a class="lightText"><i class="fa fa-long-arrow-down"></i><i class="fa fa-long-arrow-up"></i> &nbsp; IMPORT / EXPORT</a></li>
+                      <li id="clearModules" class="link clearOverlay"><a class="lightText"><i class="fa fa-times-circle"></i>&nbsp; CLEAR</a></li>
+                      <li id="settingsButton" class="link" style="display:none !important;"><a class="lightText"><i class="fa fa-cogs"></i>&nbsp; SETTINGS</a></li>
+                      <li id="mobileMenu" class="link mobile"><a class="lightText"><i class="fa fa-bars openMobile"></i><i class="fa fa-angle-double-up fa-lg closeMobile"></i></a></li>
 
                   </ul>
                   
@@ -125,13 +130,13 @@
 
           <!-- AddModule Dialog -->
           <div id="moduleList" style="display:none;">          
-            <a id="closeButton" class="closeButton button lightText large square red no-toggle" data-defaultClass="red"><i class="fa fa-close"></i></a>
+            <a id="closeButton" class="closeButton button lightText large square red no-toggle" data-defaultClass="red"><i class="fa fa-times"></i></a>
             <div id="addModule" class="addModule">            
 
                    <div class="moduleHeader">
 
                      <div class="filterWrapper">
-                         <h3><i class="fa fa-filter"></i>&nbsp; FILTER &nbsp; </H3> 
+                         <h3><i class="fa fa-caret-square-o-down"></i>&nbsp; FILTER &nbsp; </H3> 
                          <div class="moduleFilter">
                               <select id="filterButton" class="filterButton" name="filterButton">
                               <option value="all">All</option>
@@ -607,21 +612,7 @@
                               </i>
                             </a>
                           </li>
-						
-			  <li class="item data-type-screen" data-name="Mini-Map" data-type="screen" data-link="modules/miniMap.min.js" style="background-position:-666px -1554px;">
-                            <h4 class="title">
-                              Mini-Map
-                              <span class="type fa fa-list">
-                              </span>
-                            </h4>
-                            <h5 class="desc">
-                              A small map.
-                            </h5>
-                            <a class="addButton button lightText large square green no-toggle" data-defaultclass="green">
-                              <i class="fa fa-plus">
-                              </i>
-                            </a>
-                          </li>
+
                         </ul>
 
                    </div>
@@ -645,7 +636,7 @@
 
         <script src="js/vendor/jquery-2.1.0.min.js"></script>
         <script src="js/plugins.min.js"></script>
-        <script src="js/src/main.js"></script>
+        <script src="js/main.min.js"></script>
 
     </body>
 </html>
