@@ -15,7 +15,7 @@ _MkON controls on a touch tablet, with a second monitor showing resource informa
 
 ## Installation
 
-- You need to download and install the latest release of [Telemachus](https://github.com/TeleIO/Telemachus-1/releases/), this is most easily done by searching for it in ckan, and then pressing the checkmark for the latest version on the right (it is "incompatible", this is not true).
+- You need to download and install the latest release of [Telemachus Reborn](https://github.com/TeleIO/Telemachus-1/releases/), this is most easily done by searching for it in ckan, and then pressing the checkmark for the latest version on the right (it is "incompatible", this is not true).
 - Download the latest version of [mkon-iconfix](https://github.comBlokheck011/mkon-iconfix/releases), extract the zip and make sure the extracted folder is called "MKON", with all the files inside (e.g. index.html)
 - Go to your KSP Folder/GameData/Telemachus/Plugins/PluginData/Telemachus and delete the mkon folder (if there is one already). 
 - Copy the mkon folder into the above folder.
